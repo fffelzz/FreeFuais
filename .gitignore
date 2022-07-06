@@ -1,41 +1,157 @@
-# Compiled Lua sources
-luac.out
+	local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua'))()
+    local Window = Library.CreateLib("FuaiHub", "Ocean")
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+    local info = Window:NewTab("Info")
+    local localPlayer = Window:NewTab("LocalPlayer")
+    local training = Window:NewTab("Training")
+    local admin = Window:NewTab("Admin")
+    local free = Window:NewTab("(Premium)")
+    local infoSection = info:NewSection("Info")
+    local localPlayerSection = localPlayer:NewSection("LocalPlayer")
+    local trainingSection = training:NewSection("Training")
+    local adminSection = admin:NewSection("Admin")
+    local freeSection = free:NewSection("(Premium)")
+    
+    local localPlayerButton = localPlayerSection:NewButton("RGB Rank On",  UISetting, function()
+    	    _G.on = 1
+    while _G.on == 1
+    do
+                game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",1})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",2})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",3})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",4})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",5})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",6})
+        wait(0,5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",7})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",8})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",9})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",10})
+        wait(0.5)
+    end
+    end)
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+    local localPlayerButton = localPlayerSection:NewButton("RGB Rank Off",  UISetting, function()
+    	  _G.on = 0
+    while _G.on == 1
+    do
+                game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",1})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",2})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",3})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",4})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",5})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",6})
+        wait(0,5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",7})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",8})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",9})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"ChangeRankEmblem",10})
+        wait(0.5)
+    end
+    end)
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
+    local localPlayerButton = localPlayerSection:NewButton("Save Rank",  UISetting, function()
+        game.Players.LocalPlayer.Character.Head.NameBbGui:remove()
+        end)
+    local localPlayerButton = localPlayerSection:NewButton("Rgb Weight Lspeed On",  UISetting, function()
+       	_G.on = true
+    while _G.on == true
+    do
+    	game.ReplicatedStorage.RemoteEvent:FireServer({"Weight","Weight1"})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"Weight","Weight2"})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"Weight","Weight3"})
+        wait(0.5)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"Weight","Weight4"})
+        wait(0.5)
+        end
+    	end)
+        local localPlayerButton = localPlayerSection:NewButton("Rgb Weight Lspeed Off",  UISetting, function()
+       	_G.on = false
+    while _G.on == true
+    do
+        game.ReplicatedStorage.RemoteEvent:FireServer({"Weight","Weight1"})
+        wait(1)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"Weight","Weight2"})
+        wait(1)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"Weight","Weight3"})
+        wait(1)
+        game.ReplicatedStorage.RemoteEvent:FireServer({"Weight","Weight4"})
+        wait(1)
+    		end
+        end)
+ 	local trainingButton = trainingSection:NewButton("Fist 1M+",  UISetting, function()
+ 	           _G.on = 1
+    while _G.on == 1
+    do game:GetService("RunService").RenderStepped:wait()
+        
+        game.ReplicatedStorage.RemoteEvent:FireServer({"+FS3"})
+        game:GetService("RunService").RenderStepped:wait()
+end
+ 	    end)
+ 	local trainingButton = trainingSection:NewButton("Fist 1B+",  UISetting, function()
+ 	           _G.on = 1
+    while _G.on == 1
+    do game:GetService("RunService").RenderStepped:wait()
+        
+        game.ReplicatedStorage.RemoteEvent:FireServer({"+FS4"})
+        wait(1)
+end
+ 	    end)
+ 	local trainingButton = trainingSection:NewButton("Fist 100B+",  UISetting, function()
+ 	           _G.on = 1
+    while _G.on == 1
+    do game:GetService("RunService").RenderStepped:wait()
+        
+        game.ReplicatedStorage.RemoteEvent:FireServer({"+FS5"})
+        wait(1)
+end
+ 	    end)
+ 	local trainingButton = trainingSection:NewButton("Fist 10T+",  UISetting, function()
+ 	           _G.on = 1
+    while _G.on == 1
+    do game:GetService("RunService").RenderStepped:wait()
+        
+        game.ReplicatedStorage.RemoteEvent:FireServer({"+FS6"})
+        wait(1)
+end
+ 	    end)
+ 	 	local trainingButton = trainingSection:NewButton("Off Training Fist",  UISetting, function()
+ 	           _G.on = 0
+    while _G.on == 1
+    do game:GetService("RunService").RenderStepped:wait()
+        
+        game.ReplicatedStorage.RemoteEvent:FireServer({"+FS3"})
+        wait(1)
+end
+ 	    end)
+ 	    local adminButton = adminSection:NewButton("CMD-X",  UISetting, function()
+ 	    	loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+ 	    end)
+ 	    local freeButton = freeSection:NewButton("Anti [B/F] On",  UISetting, function()
+ 	    	print("By Premium Version")
+ 	    end)
+ 	    local freeButton = freeSection:NewButton("Anti [B/F] Off",  UISetting, function()
+ 	    	print("By Premium Version")
+ 	    end)
+ 	     local infoButton = infoSection:NewButton("kirilka10012005 GuiSetting,Scripter", UISetting, function()
+ 	     end)
+ 	     local infoButton = infoSection:NewButton("Lover_spaseq Tester,Scripter", UISetting, function()
+ 	    end)
